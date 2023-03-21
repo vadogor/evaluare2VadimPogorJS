@@ -4,6 +4,7 @@ class Tour {
     this.costOneDay = costOneDay;
     this.days = days;
     this.insurance = insurance;
+    this.tax = 0;
   }
 
   getName() {
@@ -29,6 +30,14 @@ class Tour {
   increaseDays(numDays) {
     this.days += numDays;
   }
+
+  setTax(taxPercentage) {
+    this.tax = taxPercentage / 100;
+  }
+
+  getPriceNetto() {
+    return this.getPrice() + this.getPrice() * this.tax;
+  }
 }
 
 console.log(`Sarina 4`);
@@ -50,4 +59,9 @@ console.log(tour.getPrice());
 tour.increaseDays(3);
 
 console.log(tour.getPrice());
+console.log(``);
+
+console.log(`Sarina 6`);
+tour.setTax(5); 
+console.log(tour.getPriceNetto());
 console.log(``);
