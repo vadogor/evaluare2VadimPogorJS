@@ -46,6 +46,20 @@ function App() {
         <button type="button">Add Product</button>
         <button type="button" onClick={buttonReset}>Reset</button>
       </form>
+
+      <br />
+
+      <table>
+        <thead>
+          <tr>
+            <th>|Nr|</th>
+            <th>Nume|</th>
+            <th>Pret unitate|</th>
+            <th>Cantitate|</th>
+            <th>Pret total|</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   );
 }
