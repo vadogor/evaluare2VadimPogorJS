@@ -65,3 +65,19 @@ console.log(`Sarina 6`);
 tour.setTax(5); 
 console.log(tour.getPriceNetto());
 console.log(``);
+
+console.log(`Sarcina 7`);
+let tours = [];
+tours.push(new Tour('Poland', 1600, 14, 1500));
+tours.push(new Tour('Izrael', 1800, 10, 700));
+tours.push(new Tour('Moldova', 800, 5, 500));
+
+for(let i = 0; i < tours.length; i++){
+    console.log(`Turul ${i+1} are urmatoarele date:`);
+    console.log(`Destinatia: ${tours[i].name}`);
+    console.log(`Costul pe zi: ${tours[i].costOneDay}`);
+    console.log(`Nr de zile: ${tours[i].days}`);
+    console.log(`Insurance: ${tours[i].insurance}`);
+    console.log(`Pret total: ${tours[i].getPrice()}`);
+    console.log(``);
+}
