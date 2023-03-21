@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { createElement, useState } from 'react';
 
 function App() {
   const [productName, setProductName] = useState('');
@@ -24,6 +24,21 @@ function App() {
     setQuantity('');
   };
 
+  const [orders, setOrders] = useState([]);
+
+  const buttonAdd = () => {
+    const newOrder = {
+      name: productName,
+      price: price,
+      quantity: quantity,
+    };
+    setOrders([...orders, newOrder]);
+    setProductName('');
+    setPrice('');
+    setQuantity('');
+  };
+
+ 
 
   return (
     <div className="App">
@@ -43,12 +58,11 @@ function App() {
           <input type="number" value={quantity} onChange={handleQuantityChange} />
         </label>
         <br />
-        <button type="button">Add Product</button>
+        <button type="button" onClick={buttonAdd}>Add Product</button>
         <button type="button" onClick={buttonReset}>Reset</button>
       </form>
 
       <br />
-
       <table>
         <thead>
           <tr>
@@ -59,6 +73,17 @@ function App() {
             <th>Pret total|</th>
           </tr>
         </thead>
+        <tbody>
+        {orders.map((order, index) => (
+            <tr key={index}>
+            <td>{index + 1}</td>
+            <td>{order.name}</td>
+            <td>{order.price}</td>
+            <td>{order.quantity}</td>
+            <td>{order.price * order.quantity}</td>
+          </tr>
+        ))}
+        </tbody>
       </table>
     </div>
   );
