@@ -38,7 +38,11 @@ function App() {
     setQuantity('');
   };
 
- 
+  const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
+
+  const handleRowHover = (index) => { // Handler pentru a actualiza starea cu indicele rândului peste care se află cursorul mouse-ului
+    setHoveredRowIndex(index);
+  }
 
   return (
     <div className="App">
@@ -75,7 +79,11 @@ function App() {
         </thead>
         <tbody>
         {orders.map((order, index) => (
-            <tr key={index}>
+            <tr 
+              key={index} 
+              onMouseEnter={() => handleRowHover(index)} onMouseLeave={() => handleRowHover(null)} 
+              style={hoveredRowIndex === index ? { backgroundColor: 'red' } : { backgroundColor: 'white' }} 
+              >
             <td>{index + 1}</td>
             <td>{order.name}</td>
             <td>{order.price}</td>
