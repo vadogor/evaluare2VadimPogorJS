@@ -10,13 +10,14 @@ class Tour {
       return this.costOneDay * this.days + this.insurance;
     }
 }
-
+console.log(`Sarcina 1`);
 var tour = new Tour('Turkey', 1500, 7, 750);
 console.log(tour.name);
 console.log(tour.costOneDay);
 console.log(tour.days);
 console.log(tour.insurance);
 console.log(tour.getPrice());
+console.log(``);
 
 // Sarcina 2
 // let firstTour = new Tour('Poland', 1600, 14, 1500);
@@ -24,6 +25,7 @@ console.log(tour.getPrice());
 // console.log(firstTour);
 // console.log(secondTour)
 //sau
+console.log(`Sarcina 2`);
 let tours = [];
 tours.push(new Tour('Poland', 1600, 14, 1500));
 tours.push(new Tour('Izrael', 1800, 10, 700));
@@ -36,8 +38,10 @@ for(let i = 0; i < tours.length; i++){
     console.log(`Insurance: ${tours[i].insurance}`);
     console.log(`Pret total: ${tours[i].getPrice()}`);
 }
+console.log(``);
 
 //Sarcina 3
+console.log(`Sarcina 3`);
 let firstTourPrice = tours[0].getPrice();
 let secondTourPrice = tours[1].getPrice();
 
