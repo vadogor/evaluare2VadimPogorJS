@@ -28,7 +28,7 @@ let tours = [];
 tours.push(new Tour('Poland', 1600, 14, 1500));
 tours.push(new Tour('Izrael', 1800, 10, 700));
 
-for(let i = 0; i < 2; i++){
+for(let i = 0; i < tours.length; i++){
     console.log(`Turul ${i+1} are urmatoarele date:`);
     console.log(`Destinatia: ${tours[i].name}`);
     console.log(`Costul pe zi: ${tours[i].costOneDay}`);
@@ -37,3 +37,12 @@ for(let i = 0; i < 2; i++){
     console.log(`Pret total: ${tours[i].getPrice()}`);
 }
 
+//Sarcina 3
+let firstTourPrice = tours[0].getPrice();
+let secondTourPrice = tours[1].getPrice();
+
+if (firstTourPrice < secondTourPrice) {
+    console.log(`Turul ${tours[0].name} este mai mic cu ${secondTourPrice - firstTourPrice}`);
+} else if(firstTourPrice > secondTourPrice){
+    console.log(`Turul ${tours[1].name} este mai mic cu ${firstTourPrice - secondTourPrice}`);
+} else console.log(`Tururile au acelasi pret`);
